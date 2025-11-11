@@ -1,0 +1,89 @@
+/* Amazon-Style Drawer Navigation */
+
+.drawer__header {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+/* Drawer List Items */
+.MuiDrawer-paper {
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #e5e7eb;
+}
+
+/* List Item Styling */
+.MuiListItem-root {
+    padding: 0;
+}
+
+.MuiListItemButton-root {
+    transition: all 0.2s ease;
+}
+
+.MuiListItemButton-root:hover {
+    background-color: #f5f5f5;
+}
+
+.MuiListItemText-root {
+    margin: 0;
+}
+
+/* Links inside drawer */
+.MuiListItem-root a {
+    text-decoration: none;
+    color: #232f3e;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.MuiListItem-root a:hover {
+    color: #FF9900;
+}
+
+/* Search Bar in Drawer */
+.search__drawer {
+    width: 100%;
+    padding: 8px 12px;
+}
+
+/* Divider Styling */
+.MuiDivider-root {
+    margin: 0;
+    border-color: #e5e7eb;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .drawer__header {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .drawer__header {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .MuiListItemButton-root {
+        padding: 10px 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .drawer__header {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .MuiListItemButton-root {
+        padding: 8px 10px;
+    }
+
+    .MuiListItemText-root {
+        font-size: 13px;
+    }
+}
