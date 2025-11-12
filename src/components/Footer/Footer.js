@@ -15,7 +15,7 @@ const Footer = () => {
                 <div className="footer__items__container">
                     <div className="footer__help__container">
                         <div className="footer__help__header">
-                            <h1>Help</h1>
+                            <h1>Bangladesh</h1>
                         </div>
                         <ul className="fotter__help__links">
                             <li className="help__link">
@@ -38,13 +38,13 @@ const Footer = () => {
                         </div>
                         <ul className="footer__contacts">
                             <li className="footer__contact">
-                                <LocalPhoneIcon /> <span>+123 4567 890</span>
+                                <LocalPhoneIcon /> <span>0178674012</span>
                             </li>
                             <li className="footer__contact">
-                                <EmailIcon /> <span>shop@shema.com</span>
+                                <EmailIcon /> <span>shop@ShopEase.com</span>
                             </li>
                             <li className="footer__contact">
-                                <LocationOnIcon /> <span>Addis Ababa, Ethiopia</span>
+                                <LocationOnIcon /> <span>Dhaka, Bangladesh</span>
                             </li>
                         </ul>
                     </div>
@@ -73,7 +73,7 @@ const Footer = () => {
                 </div>
                 <div className="fotter__copyright__container">
                     <ul className='nav'>
-                        <li className="footer__copyright">©2022 Shema Ltd. |</li>
+                        <li className="footer__copyright">©2025 ShopEase Ltd. |</li>
                         <li className="footer__terms__condition"> | Terms & Condition |</li>
                         <li className="footer__privacy__policy">| Privacy Policy</li>
                     </ul>

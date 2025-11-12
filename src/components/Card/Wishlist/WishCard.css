@@ -1,15 +1,26 @@
 .wishcard {
-    width: 90%;
-    min-height: 100px;
+    width: 95%;
+    min-height: 120px;
     height: auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
+    gap: 20px;
     position: relative;
-    background-color: rgb(255, 255, 255);
-    margin: 10px auto;
+    background: white;
+    border: 1px solid var(--neutral-200);
+    border-radius: 12px;
+    margin: 12px auto;
+    padding: 16px;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+.wishcard:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-light);
 }
 
 /* .wishcard > div {
@@ -26,86 +37,182 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     cursor: pointer;
+    flex: 0 0 120px;
+    height: 120px;
+    background: var(--neutral-100);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .wish__item__image__link:hover {
-    opacity: 0.85;
+    background: var(--neutral-200);
 }
 
 .wish__item__image {
-    width: 110px;
-    height: auto;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .wish__image {
-    width: 60%;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.wish__item__image__link:hover .wish__image {
+    transform: scale(1.08);
 }
 
 .wish__item__name {
-    width: 120px;
-    height: 50px;
-    height: auto;
+    flex: 1;
+    min-width: 150px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .wish__item__price {
-    width: 50px;
-    height: 50px;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    min-width: 100px;
+    text-align: right;
 }
 
 .add__to__cart {
     width: auto;
-    height: 100%;
+    height: auto;
+}
+
+.add__to__cart button {
+    background-color: var(--primary);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2);
+}
+
+.add__to__cart button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(30, 64, 175, 0.3);
 }
 
 .wish__remove__item__icon {
-    width: 50px;
-    height: 100%;
+    width: auto;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.wish__remove__item__icon svg {
+    color: var(--danger);
+    font-size: 24px;
+    transition: var(--transition);
+}
+
+.wish__remove__item__icon:hover svg {
+    color: #d91e1e;
+    transform: scale(1.2);
 }
 
 .wish__actions {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     position: relative;
 }
 
 .share__feedback {
     position: absolute;
-    top: -25px;
+    top: -35px;
     right: 0;
-    background-color: #FFE26E;
-    color: black;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: bold;
+    background-color: var(--accent);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
     white-space: nowrap;
-    animation: slideDown 0.3s ease-in-out;
+    animation: slideDown 0.3s ease-out;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
 }
 
 @keyframes slideDown {
     from {
         opacity: 0;
-        transform: translateY(-5px);
+        transform: translateY(-10px);
     }
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .wishcard {
+        width: 98%;
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .wish__item__image__link {
+        flex: 0 0 100px;
+        height: 100px;
+    }
+
+    .wish__item__price {
+        min-width: 80px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .wishcard {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+        padding: 12px;
+        margin: 8px 0;
+    }
+
+    .wish__item__image__link {
+        width: 100%;
+        flex: 0 0 auto;
+        height: 150px;
+    }
+
+    .wish__item__name {
+        width: 100%;
+    }
+
+    .wish__item__price {
+        width: 100%;
+        text-align: left;
+    }
+
+    .add__to__cart,
+    .wish__remove__item__icon {
+        width: 100%;
+    }
+
+    .add__to__cart button {
+        width: 100%;
     }
 }

@@ -1,77 +1,210 @@
-
 .register__card__container {
-    height: 650px;
-    width: 420px;
-    margin: auto;
-    box-shadow: 0px 2px 5px -2px;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, var(--neutral-50) 0%, white 100%);
 }
 
 .register__card {
-    height: 100%;
-    width: 90%;
-    margin: auto;
-    padding: 10px;
+    width: 100%;
+    max-width: 480px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--neutral-200);
+    padding: 48px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .register__header {
-    height: 20%;
     width: 100%;
+    margin-bottom: 32px;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    flex-direction: column;
+    gap: 8px;
 }
 
-
 .register__header h1 {
-    font-size: 2.5rem;
-    font-weight: bolder;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--neutral-900);
+    margin: 0;
+    line-height: 1.2;
+}
 
+.register__subtitle {
+    font-size: 1rem;
+    color: var(--neutral-500);
+    margin: 0;
+    font-weight: 400;
 }
 
 .register__inputs {
-    height: 70%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 32px;
 }
 
 .reg__input__container {
-    height:19%;
-    width: 100%;
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
+    gap: 8px;
 }
 
 .input__label {
-    height: 40%;
-    width: 100%;
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--neutral-800);
+    margin: 0;
 }
 
 .register__input {
     width: 100%;
-    height: 50%;
+    padding: 12px 16px;
+    font-size: 1rem;
+    border: 1px solid var(--neutral-300);
+    border-radius: 8px;
+    background: var(--neutral-50);
+    color: var(--neutral-900);
+    transition: var(--transition);
+    font-family: 'Inter', sans-serif;
+}
+
+.register__input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+}
+
+.register__input::placeholder {
+    color: var(--neutral-400);
 }
 
 .register__button__container {
-    height: 25%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 8px;
 }
 
 .register__button {
-    height: 50%;
     width: 100%;
-    font-size: 1.1rem;
-    background-color: #FFE26E;
-    border-color: #FFE26E;
-    border-style: dashed;
-    font-weight:bold;
+    padding: 14px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 8px 16px rgba(16, 185, 129, 0.25);
+}
+
+.register__button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(16, 185, 129, 0.35);
+}
+
+.register__button:active {
+    transform: translateY(0);
 }
 
 .register__other__actions {
-    height: 20%;
     width: 100%;
+    padding-top: 24px;
+    border-top: 1px solid var(--neutral-200);
+    text-align: center;
+}
+
+.register__login__account {
+    font-size: 0.95rem;
+    color: var(--neutral-600);
+}
+
+.login__link {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition);
+    margin-left: 4px;
+}
+
+.login__link:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .register__card {
+        padding: 36px 24px;
+    }
+
+    .register__header h1 {
+        font-size: 1.8rem;
+    }
+
+    .register__subtitle {
+        font-size: 0.9rem;
+    }
+
+    .register__inputs {
+        gap: 14px;
+        margin-bottom: 24px;
+    }
+
+    .register__button {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .register__card__container {
+        padding: 16px;
+    }
+
+    .register__card {
+        padding: 24px;
+    }
+
+    .register__header h1 {
+        font-size: 1.5rem;
+    }
+
+    .register__subtitle {
+        font-size: 0.85rem;
+    }
+
+    .register__inputs {
+        gap: 12px;
+    }
+
+    .register__button {
+        padding: 12px 16px;
+        font-size: 0.9rem;
+    }
+
+    .register__other__actions {
+        padding-top: 16px;
+    }
 }
